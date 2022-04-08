@@ -46,14 +46,19 @@ const styles = StyleSheet.create({
         alignItems:"flex-start",
         
     },
+    homeScreen:{
+        flex:0.83,
+        flexDirection: "column",
+        alignItems:"flex-start",
+    },
     profile: {
         flex:0.83
     },
     activityphoto:{
-        width:36,
-        height:36,
-        marginLeft:20,
-        borderRadius:200/2
+        width:30,
+        height:30,
+        marginLeft:15,
+        borderRadius:200/2,
     },
     profileimage:{
         width:75,
@@ -62,6 +67,29 @@ const styles = StyleSheet.create({
         marginLeft:20,
         marginTop: 5
     },
+    postUserPhoto:{
+        width:30,
+        height:30,
+        marginLeft:15,
+        borderRadius:200/2,
+       
+    },
+    stories:{
+        height:119,
+        flexDirection:"column",
+        alignItems:"center",
+        justifyContent:"center",
+        marginLeft:10
+    },
+    story:{
+        width:66,
+        height:66,
+        borderRadius:66/2,
+        marginRight:5,
+        borderWidth:1,
+        borderColor: "red"
+    },
+
 
 //texts
     profiletext:{
@@ -83,6 +111,27 @@ const styles = StyleSheet.create({
         textAlign: "center",
         //marginTop: 50
     },
+    homeUsername:{
+        color: "white",
+        marginLeft:8,
+        fontWeight:"bold",
+    },
+    likes:{
+        color:"white",
+        marginLeft: 15,
+        fontWeight:"bold",
+        flexDirection:"row"
+    },
+    description:{
+        color: "white",
+    },
+    storyUsername:{
+        color: "white",
+        marginTop:5,
+        paddingRight:5,
+        fontSize:12
+    },
+
 
 //footer components
     footer:{

@@ -1,35 +1,31 @@
 import React, {useState} from 'react';
-import { ImageBackground, StyleSheet, View, Text, TouchableOpacity, Image, FlatList, ScrollView, SafeAreaView } from 'react-native';
+import { ImageBackground, StyleSheet, View, Text, TouchableOpacity, Image, FlatList, ScrollView, SafeAreaView, Dimensions } from 'react-native';
 
 import styles from '../storage/styles'
-const MainScreen = ({navigation}) => {
 
-    const [users, setUsers] = useState([
-        {key: '1', photo: require('../assets/activity/1.png'), username: 'milujemeparno', activity:'milujemeparno started following you'},
-        {key: '2', photo: require('../assets/activity/2.jpg'), username: 'Johnv', activity: 'Johnv started following you'},
-        {key: '3', photo: require('../assets/activity/2.jpg'), username: 'nlukas', activity: 'Your facebook friend Lukas Novak is on instagram'},
-        {key: '4', photo: require('../assets/activity/3.jpg'), username: 'milujemeparno', activity: 'milujemeparno like your photo'},
-        {key: '5', photo: require('../assets/activity/4.jpg'), username: 'madboynick'},
-        {key: '6', photo: require('../assets/activity/5.jpg'), username: 'nlukas'},
-        {key: '7', photo: require('../assets/activity/6.jpg'), username: 'milujemeparno'},
-        {key: '8', photo: require('../assets/profilepic.jpg'), username: 'madboynick'},
-        {key: '9', photo: require('../assets/profilepic.jpg'), username: 'nlukas'},
-        {key: '10', photo: require('../assets/profilepic.jpg'), username: 'milujemeparno'},
-        {key: '11', photo: require('../assets/profilepic.jpg'), username: 'madboynick'},
-        {key: '12', photo: require('../assets/profilepic.jpg'), username: 'nlukas'},
-        {key: '13', photo: require('../assets/profilepic.jpg'), username: 'milujemeparno'},
-        {key: '14', photo: require('../assets/profilepic.jpg'), username: 'madboynick'},
-        {key: '15', photo: require('../assets/profilepic.jpg'), username: 'nlukas'},
-        {key: '16', photo: require('../assets/profilepic.jpg'), username: 'milujemeparno'},
-        {key: '17', photo: require('../assets/profilepic.jpg'), username: 'madboynick'},
-        {key: '18', photo: require('../assets/profilepic.jpg'), username: 'nlukas'},
-        {key: '19', photo: require('../assets/profilepic.jpg'), username: 'milujemeparno'},
-        {key: '20', photo: require('../assets/profilepic.jpg'), username: 'madboynick'},
-        {key: '21', photo: require('../assets/profilepic.jpg'), username: 'nlukas'},
-        {key: '22', photo: require('../assets/profilepic.jpg'), username: 'milujemeparno'},
-        {key: '23', photo: require('../assets/profilepic.jpg'), username: 'madboynick'},
-        {key: '24', photo: require('../assets/profilepic.jpg'), username: 'nlukas'}
+let deviceHeight = Dimensions.get("window").height;
+let deviceWidth = Dimensions.get("window").width;
+
+const HomeScreen = ({navigation}) => {
+
+
+    const [data, setData] = useState([
+        {key: '1', photo: require('../assets/gallery/1.jpg'), username: 'milujemeparno', profilephoto: require('../assets/activity/1.png'),description:'avdi od @youngbalint #garazpiko', likes: '4400'},
+        {key: '2', photo: require('../assets/gallery/2.jpg'), username: 'nlukas', profilephoto: require('../assets/activity/2.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '2'},
+        {key: '3', photo: require('../assets/gallery/3.jpg'), username: 'madboynick', profilephoto: require('../assets/activity/3.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '120'},
+        {key: '4', photo: require('../assets/gallery/4.jpg'), username: 'dvymyslicky', profilephoto: require('../assets/activity/4.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '30'},
+        {key: '5', photo: require('../assets/gallery/5.jpg'), username: 'garazpiko', profilephoto: require('../assets/activity/5.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '5200'},
+        {key: '6', photo: require('../assets/gallery/6.jpg'), username: 'cashanova_bg', profilephoto: require('../assets/activity/6.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '11546'},
+        {key: '7', photo: require('../assets/gallery/7.jpg'), username: 'Instagram', profilephoto: require('../assets/activity/3.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '2000521'},
+        {key: '8', photo: require('../assets/gallery/8.jpg'), username: 'rytmusking', profilephoto: require('../assets/activity/4.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '22542'},
+        
     ]);
+
+
+
+
+
+
 
 
     return (
@@ -54,9 +50,77 @@ const MainScreen = ({navigation}) => {
             </TouchableOpacity>
         </View>
 
-         <SafeAreaView style={styles.mid}>
-            
-         </SafeAreaView >
+
+
+
+
+
+
+         <SafeAreaView style={styles.homeScreen}>       
+         <ScrollView style={{marginTop:10}}> 
+            <ScrollView horizontal={true}>
+                {data.map(item =>(
+                
+
+                <View key={item.key} style={{flexDirection:"column"}}>
+                    <View style={styles.stories}>
+                        <Image style={styles.story} source={item.profilephoto}></Image>
+                        <Text style={styles.storyUsername}>{item.username}</Text>
+                    </View>
+                    
+                </View>
+
+                ))
+                }
+               </ScrollView> 
+               
+            {
+                data.map(item =>(
+                    <View key={item.key}>
+
+                        <View style={{ flexDirection:"row",height:45, alignItems:"center"}}>
+                        <Image source={item.profilephoto} style={styles.postUserPhoto}></Image>
+                        <Text style={styles.homeUsername}>{item.username}</Text>
+                        </View>
+
+                        <View style={{flexDirection:"column"}}>
+                        <Image source={item.photo} style={{width:deviceWidth, height:deviceWidth+50}}></Image>
+                        </View>
+
+                        <View style={{flexDirection:"row",height:45, alignItems:"center"}}>
+
+                        <TouchableOpacity>
+                        <Image source={require('../assets/icons/like.png')} style={{width:25,height:25,marginLeft:15}}></Image>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity>
+                        <Image source={require('../assets/icons/comment.png')} style={{width:25,height:25,marginLeft:15}}></Image>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity>
+                        <Image source={require('../assets/icons/send.png')} style={{width:20,height:20,marginLeft:15}}></Image>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity>
+                        <Image source={require('../assets/icons/save.png')} style={{width:20,height:20,marginLeft:210}}></Image>
+                        </TouchableOpacity>
+                        </View>
+
+                        <View style={{flexDirection:"column"}}>
+                            <Text style={styles.likes}>{item.likes} Likes</Text>
+                        </View>
+                        <View style={{flexDirection:"row", paddingBottom:10}}>
+                            <Text style={styles.likes}>{item.username} </Text>
+                                <Text style={styles.description}> {item.description}</Text>
+                        </View>
+                    </View>
+                ))
+            }
+            </ScrollView>
+    </SafeAreaView >
+
+
+
 
         <View style = {styles.footer}>
 
@@ -92,4 +156,4 @@ const MainScreen = ({navigation}) => {
 
 
 
-export default MainScreen;
+export default HomeScreen;
