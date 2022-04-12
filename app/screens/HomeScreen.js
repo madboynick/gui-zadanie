@@ -38,15 +38,15 @@ const HomeScreen = ({navigation}) => {
 
 
         <View style = {styles.mainheader}>
-                <Image source={require('../assets/Instagram_logo.png')} style={{width:120, height:40, marginRight:90, alignSelf:"center", marginTop:20}}></Image>
+                <Image source={require('../assets/Instagram_logo.png')} style={{width:120, height:40, position:"absolute", left:0 ,bottom:10, alignSelf:"center", marginLeft:10}}></Image>
             <TouchableOpacity>
-                <Image source={require('../assets/icons/add.png')} style={{width:25,height:25, marginRight:25, marginTop:20}}></Image>
+                <Image source={require('../assets/icons/add.png')} style={{height:25, width:25, position:"relative", right:0, marginRight:25,marginTop:20,}}></Image>
             </TouchableOpacity>
             <TouchableOpacity onPress={() =>navigation.navigate('Activity')}>
-                <Image source={require('../assets/icons/like.png')} style={{width:25,height:25, marginTop:20, marginRight:25}}></Image>
+                <Image source={require('../assets/icons/like.png')} style={{height:25, width:25, position:"relative", right:0, marginRight:25,marginTop:20,}}></Image>
             </TouchableOpacity>
             <TouchableOpacity>
-                <Image source={require('../assets/icons/send.png')} style={{width:25,height:25,marginTop:20, marginRight:15}}></Image>
+                <Image source={require('../assets/icons/send.png')} style={{height:25, width:25, position:"relative", right:0, marginRight:25, marginTop:20}}></Image>
             </TouchableOpacity>
         </View>
 
@@ -90,19 +90,19 @@ const HomeScreen = ({navigation}) => {
                         <View style={{flexDirection:"row",height:45, alignItems:"center"}}>
 
                         <TouchableOpacity>
-                        <Image source={require('../assets/icons/like.png')} style={{width:25,height:25,marginLeft:15}}></Image>
+                        <Image source={require('../assets/icons/like.png')} style={{width:25,height:25,marginLeft:15,position:"relative", left:0}}></Image>
                         </TouchableOpacity>
 
                         <TouchableOpacity>
-                        <Image source={require('../assets/icons/comment.png')} style={{width:25,height:25,marginLeft:15}}></Image>
+                        <Image source={require('../assets/icons/comment.png')} style={{width:25,height:25,marginLeft:15,position:"relative", left:0}}></Image>
                         </TouchableOpacity>
 
                         <TouchableOpacity>
-                        <Image source={require('../assets/icons/send.png')} style={{width:20,height:20,marginLeft:15}}></Image>
+                        <Image source={require('../assets/icons/send.png')} style={{width:20,height:20,marginLeft:15,position:"relative", left:0}}></Image>
                         </TouchableOpacity>
 
                         <TouchableOpacity>
-                        <Image source={require('../assets/icons/save.png')} style={{width:20,height:20,marginLeft:210}}></Image>
+                        <Image source={require('../assets/icons/save.png')} style={{width:20,height:20, position:"relative", right:0, marginLeft:210,}}></Image>
                         </TouchableOpacity>
                         </View>
 

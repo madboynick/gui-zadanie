@@ -61,11 +61,12 @@ const styles = StyleSheet.create({
         borderRadius:200/2,
     },
     profileimage:{
-        width:75,
-        height:75,
+        width:77,
+        height:77,
         borderRadius:200/2,
+        left:0,
         marginLeft:20,
-        marginTop: 5
+        marginTop: 15
     },
     postUserPhoto:{
         width:30,
@@ -102,9 +103,10 @@ const styles = StyleSheet.create({
         marginLeft:10
     },
     biotext:{
-        color: "gray",
+        color: "white",
         marginLeft:20,
-        marginTop:5
+        marginTop:0,
+        fontSize:14
     },
     headertext:{
         color: "white",
@@ -146,26 +148,29 @@ const styles = StyleSheet.create({
         marginLeft: 55,
         height:22,
         width:22,
-        borderRadius:200/2
+        borderRadius:200/2,
     },
     home:{
         marginRight:55,
         width:22,
-        height:22,        
+        height:22,
     },
     search:{
         width:22,
         height:22,
-        marginRight:55
+        marginRight:55,
+
     },
     reel:{
         width:22,
-        height:22
+        height:22,
+
     },
     bag:{
         width:22,
         height:22,
-        marginLeft:55
+        marginLeft:55,
+        
     },
 
 //login screen

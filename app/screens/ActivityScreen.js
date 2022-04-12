@@ -42,7 +42,7 @@ const MainScreen = ({navigation}) => {
 
 
         <View style = {styles.mainheader}>
-            <Text style={{fontSize:25, marginRight:250, alignSelf:"center", marginTop:20, color:"white"}}>Activity </Text>
+            <Text style={{fontSize:25, marginRight:250, alignSelf:"center", marginBottom:10,marginLeft:10, color:"white", position:"absolute", left:0, bottom:0}}>Activity </Text>
         </View>
 
          <SafeAreaView style={styles.mid}>
@@ -54,7 +54,7 @@ const MainScreen = ({navigation}) => {
                         photo: item.photo,
                     })
                     }>
-                    <View key={item.key} style={{flexDirection: "row", height:45, alignItems:"center", borderBottomWidth:1, borderBottomStartRadius:20, borderBottomColor:"#fc5c65"}}>
+                    <View key={item.key} style={{flexDirection: "row", height:68, alignItems:"center"}}>
                         
                         <Image source={item.photo} style={styles.activityphoto}></Image>
                         <Text style={styles.activitytext}>{item.username}</Text>
