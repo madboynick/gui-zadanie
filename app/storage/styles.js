@@ -30,12 +30,11 @@ const styles = StyleSheet.create({
         flexDirection:"row"
     },
     searchbar:{
-        backgroundColor:"gray",
-        width: "90%",
-        height:33,
-        marginBottom:10,
-        borderRadius:10,
-        paddingLeft:10,
+        justifyContent: "center",
+        alignItems:"center",
+        width:"100%",
+        paddingVertical:10,
+        position:"relative"
         
     },
 
@@ -90,7 +89,31 @@ const styles = StyleSheet.create({
         borderWidth:1,
         borderColor: "red"
     },
+    searchbox:{
+        width:"94%",
+        backgroundColor:"#e6e6e6",
+        borderRadius:10,
+        alignItems:"center",
+        justifyContent:"center",
+        fontSize:15,
+        padding:4,
+        paddingLeft:40,
+    },
+    searchicon:{
+        fontSize:18,
+        opacity:0.7,
+        position:"absolute",
+        zIndex:1,
+        left:25,
+    },
 
+    profilestory:{
+        width:66,
+        height:66,
+        borderRadius:66/2,
+        borderColor:"#6e6e6e",
+        borderWidth:0.3
+    },
 
 //texts
     profiletext:{
