@@ -64,7 +64,7 @@ return (
             <Image source={require("../assets/search.png")} style = {styles.search}></Image>
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress = {() => navigation.navigate('Reels')}>
             <Image source={require("../assets/icons/reel.png")} style = {styles.reel}></Image>
         </TouchableOpacity>
 

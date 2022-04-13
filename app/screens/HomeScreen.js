@@ -10,18 +10,18 @@ const HomeScreen = ({navigation}) => {
 
 
     const [data, setData] = useState([
-        {key: '1', photo: require('../assets/gallery/1.jpg'), username: 'milujemeparno', profilephoto: require('../assets/activity/1.png'),description:'avdi od @youngbalint #garazpiko', likes: '4400'},
-        {key: '2', photo: require('../assets/gallery/2.jpg'), username: 'nlukas', profilephoto: require('../assets/activity/2.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '2'},
-        {key: '3', photo: require('../assets/gallery/3.jpg'), username: 'madboynick', profilephoto: require('../assets/activity/3.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '120'},
-        {key: '4', photo: require('../assets/gallery/4.jpg'), username: 'dvymyslicky', profilephoto: require('../assets/activity/4.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '30'},
-        {key: '5', photo: require('../assets/gallery/5.jpg'), username: 'garazpiko', profilephoto: require('../assets/activity/5.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '5200'},
-        {key: '6', photo: require('../assets/gallery/6.jpg'), username: 'cashanova_bg', profilephoto: require('../assets/activity/6.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '11546'},
-        {key: '7', photo: require('../assets/gallery/7.jpg'), username: 'Instagram', profilephoto: require('../assets/activity/3.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '2000521'},
-        {key: '8', photo: require('../assets/gallery/8.jpg'), username: 'rytmusking', profilephoto: require('../assets/activity/4.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '22542'},
+        {key: '1', photo: require('../assets/gallery/1.jpg'), username: 'milujemeparno', profilephoto: require('../assets/activity/1.png'),description:'avdi od @youngbalint #garazpiko', likes: '4400',isSave: false},
+        {key: '2', photo: require('../assets/gallery/2.jpg'), username: 'nlukas', profilephoto: require('../assets/activity/2.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '2',isSave: false},
+        {key: '3', photo: require('../assets/gallery/3.jpg'), username: 'madboynick', profilephoto: require('../assets/activity/3.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '120',isSave: false},
+        {key: '4', photo: require('../assets/gallery/4.jpg'), username: 'dvymyslicky', profilephoto: require('../assets/activity/4.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '30',isSave: false},
+        {key: '5', photo: require('../assets/gallery/5.jpg'), username: 'garazpiko', profilephoto: require('../assets/activity/5.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '5200',isSave: false},
+        {key: '6', photo: require('../assets/gallery/6.jpg'), username: 'cashanova_bg', profilephoto: require('../assets/activity/6.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '11546',isSave: false},
+        {key: '7', photo: require('../assets/gallery/7.jpg'), username: 'Instagram', profilephoto: require('../assets/activity/3.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '2000521',isSave: false},
+        {key: '8', photo: require('../assets/gallery/8.jpg'), username: 'rytmusking', profilephoto: require('../assets/activity/4.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '22542',isSave: false},
         
     ]);
 
-
+    const [save, setSave] = useState(data.isSave)
 
 
 
@@ -101,8 +101,8 @@ const HomeScreen = ({navigation}) => {
                         <Image source={require('../assets/icons/send.png')} style={{width:20,height:20,marginLeft:15,position:"relative", left:0}}></Image>
                         </TouchableOpacity>
 
-                        <TouchableOpacity>
-                        <Image source={require('../assets/icons/save.png')} style={{width:20,height:20, position:"relative", right:0, marginLeft:210,}}></Image>
+                        <TouchableOpacity onPress={() => setSave(!save)}>
+                        <Image source={save ? require('../assets/icons/saved.png') : require('../assets/icons/save.png')} style={{width:20,height:20, position:"relative", right:0, marginLeft:210,}}></Image>
                         </TouchableOpacity>
                         </View>
 
@@ -132,7 +132,7 @@ const HomeScreen = ({navigation}) => {
                 <Image source={require("../assets/search.png")} style = {styles.search}></Image>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress = {() => navigation.navigate('Reels')}>
                 <Image source={require("../assets/icons/reel.png")} style = {styles.reel}></Image>
             </TouchableOpacity>
 

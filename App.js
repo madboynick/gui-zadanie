@@ -3,7 +3,8 @@ import WelcomeScreen from './app/screens/WelcomeScreen';
 import ActivityScreen from './app/screens/ActivityScreen';
 import ProfileScreen from './app/screens/ProfileScreen';
 import SearchScreen from './app/screens/SearchScreen';
-import HomeScreen from './app/screens/HomeScreen'
+import HomeScreen from './app/screens/HomeScreen';
+import ReelsScreen from './app/screens/ReelsScreen';
 
 
 import * as React from 'react';
@@ -22,6 +23,7 @@ const MyStack = () => {
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Search" component={SearchScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Reels" component={ReelsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
