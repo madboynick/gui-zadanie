@@ -1,34 +1,35 @@
 import React, {useState} from 'react';
-import { ImageBackground, StyleSheet, View, Text, TouchableOpacity, Image, FlatList, ScrollView, SafeAreaView } from 'react-native';
+import { ImageBackground, StyleSheet, View, Text, TouchableOpacity, Image, FlatList, ScrollView, SafeAreaView, Touchable } from 'react-native';
+import Ionic from 'react-native-vector-icons/Ionicons'
 
 import styles from '../storage/styles'
-const MainScreen = ({navigation}) => {
+const ActivityScreen = ({navigation}) => {
 
     const [users, setUsers] = useState([
-        {key: '1', photo: require('../assets/activity/1.png'), username: 'milujemeparno', activity:'milujemeparno started following you'},
-        {key: '2', photo: require('../assets/activity/2.jpg'), username: 'Johnv', activity: 'Johnv started following you'},
-        {key: '3', photo: require('../assets/activity/2.jpg'), username: 'nlukas', activity: 'Your facebook friend Lukas Novak is on instagram'},
-        {key: '4', photo: require('../assets/activity/3.jpg'), username: 'milujemeparno', activity: 'milujemeparno like your photo'},
-        {key: '5', photo: require('../assets/activity/4.jpg'), username: 'madboynick'},
-        {key: '6', photo: require('../assets/activity/5.jpg'), username: 'nlukas'},
-        {key: '7', photo: require('../assets/activity/6.jpg'), username: 'milujemeparno'},
-        {key: '8', photo: require('../assets/profilepic.jpg'), username: 'madboynick'},
-        {key: '9', photo: require('../assets/profilepic.jpg'), username: 'nlukas'},
-        {key: '10', photo: require('../assets/profilepic.jpg'), username: 'milujemeparno'},
-        {key: '11', photo: require('../assets/profilepic.jpg'), username: 'madboynick'},
-        {key: '12', photo: require('../assets/profilepic.jpg'), username: 'nlukas'},
-        {key: '13', photo: require('../assets/profilepic.jpg'), username: 'milujemeparno'},
-        {key: '14', photo: require('../assets/profilepic.jpg'), username: 'madboynick'},
-        {key: '15', photo: require('../assets/profilepic.jpg'), username: 'nlukas'},
-        {key: '16', photo: require('../assets/profilepic.jpg'), username: 'milujemeparno'},
-        {key: '17', photo: require('../assets/profilepic.jpg'), username: 'madboynick'},
-        {key: '18', photo: require('../assets/profilepic.jpg'), username: 'nlukas'},
-        {key: '19', photo: require('../assets/profilepic.jpg'), username: 'milujemeparno'},
-        {key: '20', photo: require('../assets/profilepic.jpg'), username: 'madboynick'},
-        {key: '21', photo: require('../assets/profilepic.jpg'), username: 'nlukas'},
-        {key: '22', photo: require('../assets/profilepic.jpg'), username: 'milujemeparno'},
-        {key: '23', photo: require('../assets/profilepic.jpg'), username: 'madboynick'},
-        {key: '24', photo: require('../assets/profilepic.jpg'), username: 'nlukas'}
+        {id: '1', photo: require('../assets/activity/1.png'), activity: 'milujemeparno started following you',username: 'milujemeparno',posts: '50',followers:'500',followed:'1000'},
+        {id: '2', photo: require('../assets/activity/2.jpg'), activity: 'Johnv is now on Instagram',username: 'Johnv',posts: '50',followers:'500',followed:'1000' },
+        {id: '3', photo: require('../assets/activity/2.jpg'), activity: 'nlukas like your photo',username: 'nlukas',posts: '50',followers:'500',followed:'1000'},
+        {id: '4', photo: require('../assets/activity/3.jpg'), activity: 'michaltu_ started following you',username: 'michaltu_',posts: '50',followers:'500',followed:'1000'},
+        {id: '5', photo: require('../assets/gallery/1.jpg'), activity: 'podmajersky.nicolas is now on Instagram',username: 'podmajersky.nicolas',posts: '50',followers:'500',followed:'1000'},
+        {id: '6', photo: require('../assets/gallery/2.jpg'), activity: '_sajkaa_ liked your photo',username: '_sajkaa_',posts: '50',followers:'500',followed:'1000'},
+        {id: '7', photo: require('../assets/gallery/3.jpg'), activity: 'ainan1396 started following you',username: 'ainan1396',posts: '50',followers:'500',followed:'1000'},
+        {id: '8', photo: require('../assets/gallery/4.jpg'), activity: 'mskmck is now on Instagram',username: 'mskmck',posts: '50',followers:'500',followed:'1000'},
+        {id: '9', photo: require('../assets/gallery/5.jpg'), activity: 'alanhesek liked your photo',username: 'alanhesek',posts: '50',followers:'500',followed:'1000'},
+        {id: '10', photo: require('../assets/gallery/6.jpg'), activity: '_sariiis179_ started following you',username: '_sariiis179_',posts: '50',followers:'500',followed:'1000'},
+        {id: '11', photo: require('../assets/gallery/7.jpg'), activity: 'tomy_kicks is now on Instagram',username: 'tomy_kicks',posts: '50',followers:'500',followed:'1000'},
+        {id: '12', photo: require('../assets/gallery/8.jpg'), activity: 'barusiatko liked your photo',username: 'barusiatko',posts: '50',followers:'500',followed:'1000'},
+        {id: '13', photo: require('../assets/gallery/9.jpg'), activity: 'kajty.p started following you',username: 'kajty.p',posts: '50',followers:'500',followed:'1000'},
+        {id: '14', photo: require('../assets/gallery/10.jpg'), activity: 'martinmikulaa is now on Instagram',username: 'martinmikulaa',posts: '50',followers:'500',followed:'1000'},
+        {id: '15', photo: require('../assets/gallery/9.jpg'), activity: 'kajty.p liked your photo',username: 'kajty.p',posts: '50',followers:'500',followed:'1000'},
+        {id: '16', photo: require('../assets/gallery/12.jpg'), activity: 'adka.allam started following you',username: 'adka.allam',posts: '50',followers:'500',followed:'1000'},
+        {id: '17', photo: require('../assets/gallery/13.jpg'), activity: 'janis is now on Instagram',username: 'janis',posts: '50',followers:'500',followed:'1000'},
+        {id: '18', photo: require('../assets/gallery/14.jpg'), activity: 'davidmican_ liked your photo',username: 'davidmican_',posts: '50',followers:'500',followed:'1000'},
+        {id: '19', photo: require('../assets/gallery/15.jpg'), activity: 'nxnus started following you',username: 'nxnus',posts: '50',followers:'500',followed:'1000'},
+        {id: '20', photo: require('../assets/gallery/16.jpg'), activity: 'dvymyslicky is now on Instagram',username: 'dvymyslicky',posts: '50',followers:'500',followed:'1000'},
+        {id: '21', photo: require('../assets/gallery/17.jpg'), activity: 'ester.mala liked your photo',username: 'ester.mala',posts: '50',followers:'500',followed:'1000'},
+        {id: '22', photo: require('../assets/gallery/18.jpg'), activity: 'etel.truhlarova started following you',username: 'etel.truhlarova',posts: '50',followers:'500',followed:'1000'},
+        {id: '23', photo: require('../assets/gallery/19.jpg'), activity: 'toporova_simona is now on Instagram',username: 'toporova_simona',posts: '50',followers:'500',followed:'1000'},
+        {id: '24', photo: require('../assets/gallery/20.jpg'), activity: 'nellhx liked your photo',username: 'nellhx',posts: '50',followers:'500',followed:'1000'}
     ]);
 
 
@@ -42,7 +43,12 @@ const MainScreen = ({navigation}) => {
 
 
         <View style = {styles.mainheader}>
-            <Text style={{fontSize:25, marginRight:250, alignSelf:"center", marginBottom:10,marginLeft:10, color:"white", position:"absolute", left:0, bottom:0}}>Activity </Text>
+            
+            <TouchableOpacity style={{padding:20, left:0, position:"absolute", bottom:0}} onPress={() => navigation.navigate('Home')}>
+            <Ionic name='arrow-back-outline' style={{color:"white", fontSize:30, position:"absolute", left:10, bottom:0,marginBottom:5,}}></Ionic>
+            </TouchableOpacity>
+           
+            <Text style={{fontSize:20, marginRight:250, alignSelf:"center", marginBottom:10,marginLeft:10, color:"white", position:"absolute", left:50, bottom:0, fontWeight:"bold"}}>Activity </Text>
         </View>
 
          <SafeAreaView style={styles.mid}>
@@ -52,12 +58,15 @@ const MainScreen = ({navigation}) => {
                     <TouchableOpacity onPress={() => navigation.navigate('Profile', {
                         username: item.username,
                         photo: item.photo,
+                        posts: item.posts,
+                        followers: item.followers,
+                        followed: item.followed
                     })
                     }>
-                    <View key={item.key} style={{flexDirection: "row", height:68, alignItems:"center"}}>
+                    <View key={item.id} style={{flexDirection: "row", height:68, alignItems:"center"}}>
                         
                         <Image source={item.photo} style={styles.activityphoto}></Image>
-                        <Text style={styles.activitytext}>{item.username}</Text>
+                        <Text style={styles.activitytext}>{item.activity}</Text>
                         
                     </View>
                     </TouchableOpacity>
@@ -100,4 +109,4 @@ const MainScreen = ({navigation}) => {
 
 
 
-export default MainScreen;
+export default ActivityScreen;

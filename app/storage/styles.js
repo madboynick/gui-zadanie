@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
         flex:0.83
     },
     activityphoto:{
-        width:30,
-        height:30,
+        width:40,
+        height:40,
         marginLeft:15,
         borderRadius:200/2,
     },

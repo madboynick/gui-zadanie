@@ -10,14 +10,14 @@ const HomeScreen = ({navigation}) => {
 
 
     const [data, setData] = useState([
-        {key: '1', photo: require('../assets/gallery/1.jpg'), username: 'milujemeparno', profilephoto: require('../assets/activity/1.png'),description:'avdi od @youngbalint #garazpiko', likes: '4400',isSave: false},
-        {key: '2', photo: require('../assets/gallery/2.jpg'), username: 'nlukas', profilephoto: require('../assets/activity/2.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '2',isSave: false},
-        {key: '3', photo: require('../assets/gallery/3.jpg'), username: 'madboynick', profilephoto: require('../assets/activity/3.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '120',isSave: false},
-        {key: '4', photo: require('../assets/gallery/4.jpg'), username: 'dvymyslicky', profilephoto: require('../assets/activity/4.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '30',isSave: false},
-        {key: '5', photo: require('../assets/gallery/5.jpg'), username: 'garazpiko', profilephoto: require('../assets/activity/5.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '5200',isSave: false},
-        {key: '6', photo: require('../assets/gallery/6.jpg'), username: 'cashanova_bg', profilephoto: require('../assets/activity/6.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '11546',isSave: false},
-        {key: '7', photo: require('../assets/gallery/7.jpg'), username: 'Instagram', profilephoto: require('../assets/activity/3.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '2000521',isSave: false},
-        {key: '8', photo: require('../assets/gallery/8.jpg'), username: 'rytmusking', profilephoto: require('../assets/activity/4.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '22542',isSave: false},
+        {key: 1, photo: require('../assets/gallery/1.jpg'), username: 'milujemeparno', profilephoto: require('../assets/activity/1.png'),description:'avdi od @youngbalint #garazpiko', likes: '4400',isSave: false},
+        {key: 2, photo: require('../assets/gallery/2.jpg'), username: 'nlukas', profilephoto: require('../assets/activity/2.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '2',isSave: false},
+        {key: 3, photo: require('../assets/gallery/3.jpg'), username: 'madboynick', profilephoto: require('../assets/activity/3.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '120',isSave: false},
+        {key: 4, photo: require('../assets/gallery/4.jpg'), username: 'dvymyslicky', profilephoto: require('../assets/activity/4.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '30',isSave: false},
+        {key: 5, photo: require('../assets/gallery/5.jpg'), username: 'garazpiko', profilephoto: require('../assets/activity/5.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '5200',isSave: false},
+        {key: 6, photo: require('../assets/gallery/6.jpg'), username: 'cashanova_bg', profilephoto: require('../assets/activity/6.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '11546',isSave: false},
+        {key: 7, photo: require('../assets/gallery/7.jpg'), username: 'Instagram', profilephoto: require('../assets/activity/3.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '2000521',isSave: false},
+        {key: 8, photo: require('../assets/gallery/8.jpg'), username: 'rytmusking', profilephoto: require('../assets/activity/4.jpg'),description:'avdi od @youngbalint #garazpiko', likes: '22542',isSave: false},
         
     ]);
 
@@ -42,7 +42,7 @@ const HomeScreen = ({navigation}) => {
             <TouchableOpacity>
                 <Image source={require('../assets/icons/add.png')} style={{height:25, width:25, position:"relative", right:0, marginRight:25,marginTop:20,}}></Image>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() =>navigation.navigate('Activity')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Activity')}>
                 <Image source={require('../assets/icons/like.png')} style={{height:25, width:25, position:"relative", right:0, marginRight:25,marginTop:20,}}></Image>
             </TouchableOpacity>
             <TouchableOpacity>
